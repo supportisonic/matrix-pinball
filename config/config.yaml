@@ -1,5 +1,25 @@
 #config_version=6
 
+
+hardware:
+    platform: fast
+
+mpf:
+    report_crashes: never
+
+fast:
+  net:
+    debug: false      # change to true to see full NET serial communication in the log. Search for `[NET]`
+    # port: /dev/cu.usbmodem14601
+    controller: neuron
+
+  exp:
+    debug: false      # change to true to see full EXP serial communication in the log. Search for `[EXP]`
+    # port: /dev/cu.usbmodem14603
+    boards:
+      neuron:
+        model: FP-EXP-2000
+
 switches:
   s_left_flipper:
     number:
