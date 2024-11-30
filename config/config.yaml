@@ -12,6 +12,17 @@ fast:
     debug: false      # change to true to see full NET serial communication in the log. Search for `[NET]`
     # port: /dev/cu.usbmodem14601
     controller: neuron
+    io_loop: 
+            cab:
+                model: FP-CAB-0001
+                order: 1
+            top1616:
+                model: FP-I/O-1616
+                order: 2
+            bottom3208:
+                model: FP-I/O-3208
+                order: 3
+    watchdog: 1s 
 
   exp:
     debug: false      # change to true to see full EXP serial communication in the log. Search for `[EXP]`
@@ -19,14 +30,84 @@ fast:
     boards:
       neuron:
         model: FP-EXP-2000
+        breakouts:
+          - port: 1
+            model: FP-PWR-0007
 
 switches:
-  s_left_flipper:
-    number:
+
+  s_left_flipper: # Under playfield flipper switch
+    number: bottom3208-999
     tags: left_flipper
-  s_right_flipper:
-    number:
+  s_right_flipper: # Under playfield flipper switch
+    number: bottom3208-999
     tags: right_flipper
+
+    # Bottom Third Switches. Left to Right.
+  outlane_left:
+    number: bottom3208-999
+    tags: left_outlane
+  inlane_left_left:
+    number: bottom3208-999
+  inlane_left_right:
+    number: bottom3208-999
+  inlane_right_left:
+    number: bottom3208-999
+  inlane_right_right:
+    number: bottom3208-999
+  outlane_right:
+    number: bottom3208-999
+  
+  slingshot_left:
+    number: bottom3208-999
+  slingshot_right:
+    number: bottom3208-999
+
+  #Trough Switches (x8)
+  trough_1:
+    number: bottom3208-999
+  trough_2:
+    number: bottom3208-999
+  trough_3:
+    number: bottom3208-999
+  trough_4:
+    number: bottom3208-999
+  trough_5:
+    number: bottom3208-999
+  trough_6:
+    number: bottom3208-999
+  trough_7:
+    number: bottom3208-999
+  trough_8:
+    number: bottom3208-999
+
+  # plunger lane
+  plunger_lane:
+    number: bottom3208-999
+  
+  # EMP Pop Bumper Switches
+  emp_pop_bumper:
+    number: bottom3208-999
+    tags: emp_pop
+  emp_trigger:
+    number: bottom3208-999
+  emp_switch_1:
+    number: bottom3208-999
+  emp_switch_2:
+    number: bottom3208-999
+  emp_switch_3:
+    number: bottom3208-999
+  emp_switch_4:
+    number: bottom3208-999
+  emp_switch_5:
+    number: bottom3208-999
+
+  # Ammo Target
+  ammo_target:
+    number: bottom3208-999
+  ammo_rollover:
+    number: bottom3208-999
+
 
 coils:
   c_flipper_left_main:
