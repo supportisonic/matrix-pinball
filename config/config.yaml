@@ -43,6 +43,7 @@ fast:
 
 switches:
 
+  ## Flipper Cabinet Buttons
   s_left_flipper:
     number: cab-999
     tags: left_flipper
@@ -50,6 +51,7 @@ switches:
     number: cab-999
     tags: right_flipper
 
+  ## Flipper EOS Switches
   s_left_flipper_eos: # End of Stroke
     number: bottom3208-25
   s_right_flipper_eos: # End of Stroke
@@ -98,9 +100,9 @@ switches:
     number: bottom3208-999 # Not yet installed.
   
   # EMP Pop Bumper Area Switches
-  s_emp_pop_bumper:
+  s_emp_pop:
     number: bottom3208-14
-    tags: emp_pop
+    debounce: quick
   s_emp_trigger:
     number: bottom3208-13
   s_emp_target_1:
@@ -132,15 +134,30 @@ coils:
     allow_enable: true # Allows the flipper coil power to be held (failsafe)
   c_flipper_left_main:
     number: bottom3208-3
+    default_pulse_ms: 10
   c_flipper_right_hold:
     number: bottom3208-4
     allow_enable: true # Allows the flipper coil power to be held (failsafe)
   c_flipper_right_main:
     number: bottom3208-5
+    default_pulse_ms: 10
   c_sling_right:
     number: bottom3208-6
+    default_pulse_ms: 20
+    platform_settings:
+      recycle_ms: 40
   c_sling_left:
     number: bottom3208-7
+      default_pulse_ms: 20
+    platform_settings:
+      recycle_ms: 40
+  
+  # Middle Playfield Coils (in EMP)
+  c_emp_pop:
+    number: top1616-999 # Not yet installed.
+    default_pulse_ms: 20
+    platform_settings:
+      recycle_ms: 40
 
 playfields:
   playfield:
@@ -153,9 +170,21 @@ flippers:
     main_coil: c_flipper_left_main
     hold_coil: c_flipper_left_hold
     activation_switch: s_left_flipper
+    eos_switch: s_left_flipper_eos
+    use_eos: true
     enable_events: machine_reset_phase_3 # Allows the flippers to work before a ball is started
   right_flipper:
     main_coil: c_flipper_right_main
     hold_coil: c_flipper_right_hold
     activation_switch: s_right_flipper
+    eos_switch: s_right_flipper_eos
+    use_eos: true
     enable_events: machine_reset_phase_3 # Allows the flippers to work before a ball is started
+
+autofire_coils:
+  c_sling_left:
+    switch: s_sling_left
+    coil: c_sling_left
+  c_sling_right:
+    switch: s_sling_right
+    coil: c_sling_right
