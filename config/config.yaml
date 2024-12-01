@@ -22,7 +22,14 @@ fast:
             bottom3208:
                 model: FP-I/O-3208
                 order: 3
-    watchdog: 1s 
+    port: auto
+    baud: 921600
+    debug: false
+    watchdog: 1s
+    default_quick_debounce_open: 2ms
+    default_quick_debounce_close: 2ms
+    default_normal_debounce_open: 4ms
+    default_normal_debounce_close: 4ms
 
   exp:
     debug: false      # change to true to see full EXP serial communication in the log. Search for `[EXP]`
@@ -36,90 +43,104 @@ fast:
 
 switches:
 
-  s_left_flipper: # Under playfield flipper switch
-    number: bottom3208-999
+  s_left_flipper:
+    number: cab-999
     tags: left_flipper
-  s_right_flipper: # Under playfield flipper switch
-    number: bottom3208-999
+  s_right_flipper:
+    number: cab-999
     tags: right_flipper
 
+  s_left_flipper_eos: # End of Stroke
+    number: bottom3208-25
+  s_right_flipper_eos: # End of Stroke
+    number: bottom3208-24
+
     # Bottom Third Switches. Left to Right.
-  outlane_left:
-    number: bottom3208-999
+  s_outlane_left:
+    number: bottom3208-19
     tags: left_outlane
-  inlane_left_left:
-    number: bottom3208-999
-  inlane_left_right:
-    number: bottom3208-999
-  inlane_right_left:
-    number: bottom3208-999
-  inlane_right_right:
-    number: bottom3208-999
-  outlane_right:
-    number: bottom3208-999
+  s_inlane_left_outer:
+    number: bottom3208-18
+  s_inlane_left_inner:
+    number: bottom3208-17
+  s_inlane_right_inner:
+    number: bottom3208-27
+  s_inlane_right_outer:
+    number: bottom3208-28
+  s_outlane_right:
+    number: bottom3208-29
   
-  slingshot_left:
-    number: bottom3208-999
-  slingshot_right:
-    number: bottom3208-999
+  s_sling_left:
+    number: bottom3208-16 ## To check
+  s_sling_right:
+    number: bottom3208-26
 
   #Trough Switches (x8)
-  trough_1:
-    number: bottom3208-999
-  trough_2:
-    number: bottom3208-999
-  trough_3:
-    number: bottom3208-999
-  trough_4:
-    number: bottom3208-999
-  trough_5:
-    number: bottom3208-999
-  trough_6:
-    number: bottom3208-999
-  trough_7:
-    number: bottom3208-999
-  trough_8:
-    number: bottom3208-999
+  s_trough_1:
+    number: bottom3208-0
+  s_trough_2:
+    number: bottom3208-1
+  s_trough_3:
+    number: bottom3208-2
+  s_trough_4:
+    number: bottom3208-4
+  s_trough_5:
+    number: bottom3208-3
+  s_trough_6:
+    number: bottom3208-5
+  s_trough_7:
+    number: bottom3208-6
+  s_trough_8:
+    number: bottom3208-7
 
   # plunger lane
-  plunger_lane:
-    number: bottom3208-999
+  s_plunger_lane:
+    number: bottom3208-999 # Not yet installed.
   
-  # EMP Pop Bumper Switches
-  emp_pop_bumper:
-    number: bottom3208-999
+  # EMP Pop Bumper Area Switches
+  s_emp_pop_bumper:
+    number: bottom3208-14
     tags: emp_pop
-  emp_trigger:
-    number: bottom3208-999
-  emp_switch_1:
-    number: bottom3208-999
-  emp_switch_2:
-    number: bottom3208-999
-  emp_switch_3:
-    number: bottom3208-999
-  emp_switch_4:
-    number: bottom3208-999
-  emp_switch_5:
-    number: bottom3208-999
+  s_emp_trigger:
+    number: bottom3208-13
+  s_emp_target_1:
+    number: bottom3208-9
+  s_emp_target_2:
+    number: bottom3208-10
+  s_emp_target_3:
+    number: bottom3208-11
+  s_emp_target_4:
+    number: bottom3208-12
+  s_kickback_target:
+    number: bottom3208-8
 
   # Ammo Target
-  ammo_target:
-    number: bottom3208-999
-  ammo_rollover:
-    number: bottom3208-999
+  s_ammo_target:
+    number: bottom3208-20
+  s_ammo_rollover:
+    number: bottom3208-21
 
 
 coils:
-  c_flipper_left_main:
-    number: 0  # again, these numbers will probably be different for you
+  # Bottom Third Coils.
+  c_auto_plunge:
+    number: bottom3208-0
+  c_trough_eject:
+    number: bottom3208-1
   c_flipper_left_hold:
-    number: 1  # check your platform-specific documentation for the actual numbers
-    allow_enable: true
-  c_flipper_right_main:
-    number: 2
+    number: bottom3208-2
+    allow_enable: true # Allows the flipper coil power to be held (failsafe)
+  c_flipper_left_main:
+    number: bottom3208-3
   c_flipper_right_hold:
-    number: 3
-    allow_enable: true
+    number: bottom3208-4
+    allow_enable: true # Allows the flipper coil power to be held (failsafe)
+  c_flipper_right_main:
+    number: bottom3208-5
+  c_sling_right:
+    number: bottom3208-6
+  c_sling_left:
+    number: bottom3208-7
 
 playfields:
   playfield:
