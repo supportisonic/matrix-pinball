@@ -169,7 +169,7 @@ coils:
       recycle_ms: 40
   c_sling_left:
     number: bottom3208-7
-      default_pulse_ms: 20
+    default_pulse_ms: 20
     platform_settings:
       recycle_ms: 40
   
