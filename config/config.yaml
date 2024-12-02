@@ -180,6 +180,14 @@ coils:
     platform_settings:
       recycle_ms: 40
 
+autofire_coils:
+  left_slingshot:
+    coil: c_sling_left
+    switch: s_sling_left
+  right_slingshot:
+    coil: c_sling_right
+    switch: s_sling_right
+
 playfields:
   playfield:
     tags: default
