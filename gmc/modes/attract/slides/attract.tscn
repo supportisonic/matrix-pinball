@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://beah3ghimt2j6"]
+
+[ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_slide.gd" id="1_cw3x3"]
+
+[node name="Attract" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_cw3x3")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1280.0
+color = Color(0.0784314, 0.14902, 0.133333, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_top = 431.0
+offset_right = 1920.0
+offset_bottom = 645.0
+theme_override_font_sizes/font_size = 100
+text = "Entering the matrix..."
+horizontal_alignment = 1
+vertical_alignment = 1
