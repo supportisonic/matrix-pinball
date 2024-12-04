@@ -24,7 +24,6 @@ fast:
                 order: 3
     port: auto
     baud: 921600
-    debug: false
     watchdog: 1s
     default_quick_debounce_open: 2ms
     default_quick_debounce_close: 2ms
@@ -44,14 +43,14 @@ fast:
 switches:
   ## Flipper Cabinet Buttons
   s_left_flipper:
-    number: cab-999
+    number: cab-999-s_left_flipper
     tags: left_flipper
   s_right_flipper:
-    number: cab-999
+    number: cab-999-s_right_flipper
     tags: right_flipper
 
   s_start:
-    number: cab-999
+    number: cab-999-s_start
     tags: start
 
   ## Flipper EOS Switches
@@ -87,7 +86,7 @@ switches:
 
   #Trough Switches (x8)
   s_trough1: # Opto Switch (Not yet installed)
-    number: bottom3208-999
+    number: bottom3208-999-s_trough1
     type: NC
   s_trough2:
     number: bottom3208-0
@@ -104,12 +103,12 @@ switches:
   s_trough8:
     number: bottom3208-6
   s_trough_jam:
-    number: bottom3208-999 # Not yet installed.
+    number: bottom3208-999-s_trough_jam # Not yet installed.
     type: NC
 
   # plunger lane
-  s_plunger_lane:
-    number: bottom3208-999 # Not yet installed.
+  s_plunger:
+    number: bottom3208-999-s_plunger # Not yet installed.
   
   # EMP Pop Bumper Area Switches
   s_emp_pop:
@@ -175,7 +174,7 @@ coils:
   
   # Middle Playfield Coils (in EMP)
   c_emp_pop:
-    number: top1616-999 # Not yet installed.
+    number: top1616-999-c_emp_pop # Not yet installed.
     default_pulse_ms: 20
     platform_settings:
       recycle_ms: 40
@@ -212,17 +211,9 @@ flippers:
     use_eos: true
     # enable_events: machine_reset_phase_3 # Allows the flippers to work before a ball is started
 
-autofire_coils:
-  c_sling_left:
-    switch: s_sling_left
-    coil: c_sling_left
-  c_sling_right:
-    switch: s_sling_right
-    coil: c_sling_right
-
 ball_devices:
   bd_trough:
-    ball_switches: s_trough1, s_trough2, s_trough3, s_trough4, s_trough5, s_trough6, s_trough7, s_trough8 s_trough_jam
+    ball_switches: s_trough1, s_trough2, s_trough3, s_trough4, s_trough5, s_trough6, s_trough7, s_trough8, s_trough_jam
     eject_coil: c_trough_eject
     tags: trough, home, drain
     jam_switch: s_trough_jam # Opto switch to detect a jam in the trough
@@ -253,13 +244,14 @@ slides:
     widgets:
       - text: ATTRACT MODE
         type: text
-slide_player:
-  init_done: welcome_slide
-  mode_attract_started: attract_started
   ball_started:
     widgets:
       type: text
       text: PLAYER (number) BALL (ball)
+slide_player:
+  init_done: welcome_slide
+  mode_attract_started: attract_started
+  
 
 
 keyboard:
