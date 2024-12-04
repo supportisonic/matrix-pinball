@@ -34,3 +34,14 @@ By default CoolTerm and MPF have issues sending and receiving serial port comman
 - sudo usermod -a -G tty <user>
 
 Replace <user> with the actual username in those commands. Reboot is required.
+
+
+# Running MPF with Godot on Windows
+https://www.youtube.com/watch?v=IO3U1SMZ5-A
+
+Open Powershell:
+mpf/Scripts/Activate.ps1
+
+Go to machine folder in Powershell. Open and play Godot file. Then:
+
+mpf -xt 
