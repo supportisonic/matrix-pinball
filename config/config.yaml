@@ -230,10 +230,6 @@ displays:
     width: 800
     height: 600
 
-slides:
-  welcome_slide:
-  attract_started:
-  ball_started:
 slide_player:
   init_done: attract
   mode_attract_started: attract
