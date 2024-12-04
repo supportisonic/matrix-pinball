@@ -231,7 +231,7 @@ displays:
     height: 600
 
 slide_player:
-  init_done: attract
+  init_done: welcome
   mode_attract_started: attract
   
 

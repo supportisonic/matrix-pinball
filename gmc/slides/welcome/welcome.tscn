@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=3 uid="uid://3nmkyyxph5kf"]
+
+[ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_slide.gd" id="1_ciw14"]
+
+[node name="Welcome" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_ciw14")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.955
+anchor_bottom = -0.955
+offset_right = 1920.0
+offset_bottom = 1280.0
+color = Color(0.0651891, 0.117921, 0.0670796, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_top = 423.0
+offset_right = 1919.0
+offset_bottom = 866.0
+theme_override_font_sizes/font_size = 70
+text = "loading..."
+horizontal_alignment = 1
+vertical_alignment = 1
