@@ -43,14 +43,14 @@ fast:
 switches:
   ## Flipper Cabinet Buttons
   s_left_flipper:
-    number: cab-999-s_left_flipper
+    number: cab-99934534535434544
     tags: left_flipper
   s_right_flipper:
-    number: cab-999-s_right_flipper
+    number: cab-99934535345345345
     tags: right_flipper
 
   s_start:
-    number: cab-999-s_start
+    number: cab-999345345435345345
     tags: start
 
   ## Flipper EOS Switches
@@ -173,11 +173,11 @@ coils:
       recycle_ms: 40
   
   # Middle Playfield Coils (in EMP)
-  c_emp_pop:
-    number: top1616-999-c_emp_pop # Not yet installed.
-    default_pulse_ms: 20
-    platform_settings:
-      recycle_ms: 40
+  # c_emp_pop:
+  #   number: top1616-99945546455665 # Not yet installed.
+  #   default_pulse_ms: 20
+  #   platform_settings:
+  #     recycle_ms: 40
 
 autofire_coils:
   left_slingshot:
