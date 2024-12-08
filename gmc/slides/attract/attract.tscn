@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://beah3ghimt2j6"]
 
 [ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_slide.gd" id="1_cw3x3"]
-[ext_resource type="Texture2D" uid="uid://6js05uykyxm8" path="res://slides/attract/assets/matrix-wallpaper-placeholder.png" id="2_6en68"]
+[ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_video_player.gd" id="2_5xfga"]
 
 [node name="Attract" type="Control"]
 layout_mode = 3
@@ -14,7 +14,8 @@ offset_right = 1920.0
 offset_bottom = 1280.0
 color = Color(0.0784314, 0.14902, 0.133333, 1)
 
-[node name="Matrix-wallpaper-placeholder" type="Sprite2D" parent="."]
-position = Vector2(952, 640)
-scale = Vector2(2.638, 2.638)
-texture = ExtResource("2_6en68")
+[node name="MPFVideoPlayer" type="VideoStreamPlayer" parent="."]
+layout_mode = 0
+offset_right = 1948.0
+offset_bottom = 1276.0
+script = ExtResource("2_5xfga")

@@ -1,0 +1,38 @@
+[gd_scene load_steps=2 format=3 uid="uid://l5h7wpctds0b"]
+
+[ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_slide.gd" id="1_nv4i6"]
+
+[node name="PlungeReady" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_nv4i6")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1280.0
+color = Color(0.0253638, 0.0253638, 0.0253638, 1)
+
+[node name="Label-WakeUp" type="Label" parent="."]
+layout_mode = 0
+offset_left = 65.0
+offset_top = 65.0
+offset_right = 215.0
+offset_bottom = 101.0
+theme_override_colors/font_color = Color(0.662745, 1, 0.635294, 0.694118)
+theme_override_colors/font_shadow_color = Color(0, 1, 0, 0.121569)
+theme_override_font_sizes/font_size = 20
+text = "wake up neo..."
+
+[node name="Cursor" type="Label" parent="."]
+layout_mode = 0
+offset_left = 215.0
+offset_top = 65.0
+offset_right = 230.0
+offset_bottom = 101.0
+theme_override_colors/font_color = Color(0.662745, 1, 0.635294, 0.694118)
+theme_override_colors/font_shadow_color = Color(0, 1, 0, 0.121569)
+theme_override_font_sizes/font_size = 20
+text = "_"
+
+[node name="CursorTimer" type="Timer" parent="."]
