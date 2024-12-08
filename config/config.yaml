@@ -13,15 +13,15 @@ fast:
     # port: /dev/cu.usbmodem14601
     controller: neuron
     io_loop: 
-            cab:
-                model: FP-CAB-0001
-                order: 1
+            # cab:
+            #     model: FP-CAB-0001
+            #     order: 1
             top1616:
                 model: FP-I/O-1616
-                order: 2
+                order: 1
             bottom3208:
                 model: FP-I/O-3208
-                order: 3
+                order: 2
     port: auto
     baud: 921600
     watchdog: 1s
@@ -42,12 +42,12 @@ fast:
 
 switches:
   ## Flipper Cabinet Buttons
-  s_left_flipper:
-    number: cab-99934534535434544
-    tags: left_flipper
-  s_right_flipper:
-    number: cab-99934535345345345
-    tags: right_flipper
+  # s_left_flipper:
+  #   number: cab-99934534535434544
+  #   tags: left_flipper
+  # s_right_flipper:
+  #   number: cab-99934535345345345
+  #   tags: right_flipper
 
   s_start:
     number: cab-999345345435345345
@@ -85,9 +85,9 @@ switches:
     number: bottom3208-26
 
   #Trough Switches (x8)
-  s_trough1: # Opto Switch (Not yet installed)
-    number: bottom3208-999-s_trough1
-    type: NC
+  # s_trough1: # Opto Switch (Not yet installed)
+  #   number: bottom3208-999-s_trough1
+  #   type: NC
   s_trough2:
     number: bottom3208-0
   s_trough3:
@@ -102,13 +102,13 @@ switches:
     number: bottom3208-5
   s_trough8:
     number: bottom3208-6
-  s_trough_jam:
-    number: bottom3208-999-s_trough_jam # Not yet installed.
-    type: NC
+  # s_trough_jam:
+  #   number: bottom3208-999-s_trough_jam # Not yet installed.
+  #   type: NC
 
   # plunger lane
-  s_plunger:
-    number: bottom3208-999-s_plunger # Not yet installed.
+  # s_plunger:
+  #   number: bottom3208-999-s_plunger # Not yet installed.
   
   # EMP Pop Bumper Area Switches
   s_emp_pop:
@@ -192,76 +192,38 @@ playfields:
     tags: default
     default_source_device: bd_plunger
 
-virtual_platform_start_active_switches: s_trough1, s_trough2, s_trough3, s_trough4, s_trough5, s_trough6, s_trough7
+virtual_platform_start_active_switches: s_trough2, s_trough3, s_trough4, s_trough5, s_trough6, s_trough7
 
 
 flippers:
   left_flipper:
     main_coil: c_flipper_left_main
     hold_coil: c_flipper_left_hold
-    activation_switch: s_left_flipper
+    activation_switch: s_outlane_left
     eos_switch: s_left_flipper_eos
     use_eos: true
     # enable_events: machine_reset_phase_3 # Allows the flippers to work before a ball is started
   right_flipper:
     main_coil: c_flipper_right_main
     hold_coil: c_flipper_right_hold
-    activation_switch: s_right_flipper
+    activation_switch: s_outlane_right
     eos_switch: s_right_flipper_eos
     use_eos: true
     # enable_events: machine_reset_phase_3 # Allows the flippers to work before a ball is started
 
 ball_devices:
   bd_trough:
-    ball_switches: s_trough1, s_trough2, s_trough3, s_trough4, s_trough5, s_trough6, s_trough7, s_trough8, s_trough_jam
+    ball_switches: s_trough2, s_trough3, s_trough4, s_trough5, s_trough6, s_trough7, s_trough8
     eject_coil: c_trough_eject
     tags: trough, home, drain
-    jam_switch: s_trough_jam # Opto switch to detect a jam in the trough
     eject_coil_jam_pulse: 15ms
     eject_targets: bd_plunger
     eject_timeouts: 3s
   bd_plunger:
-    ball_switches: s_plunger
+    ball_switches: s_inlane_left_inner
     mechanical_eject: true
     eject_timeouts: 5s
-
-displays:
-  window:
-    width: 800
-    height: 600
 
 slide_player:
   init_done: welcome
   mode_attract_started: attract
-  
-
-
-keyboard:
-  s:
-    switch: s_start
-  q:
-    switch: s_right_inlane
-  1:
-    switch: s_trough1
-    toggle: true
-  2:
-    switch: s_trough2
-    toggle: true
-  3:
-    switch: s_trough3
-    toggle: true
-  4:
-    switch: s_trough4
-    toggle: true
-  5:
-    switch: s_trough5
-    toggle: true
-  6:
-    switch: s_trough6
-    toggle: true
-  7:
-    switch: s_trough7
-    toggle: true
-  p:
-    switch: s_plunger
-    toggle: true
