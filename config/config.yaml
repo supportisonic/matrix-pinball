@@ -13,22 +13,12 @@ fast:
     # port: /dev/cu.usbmodem14601
     controller: neuron
     io_loop: 
-            # cab:
-            #     model: FP-CAB-0001
-            #     order: 1
             top1616:
                 model: FP-I/O-1616
                 order: 1
             bottom3208:
                 model: FP-I/O-3208
                 order: 2
-    port: auto
-    baud: 921600
-    watchdog: 1s
-    default_quick_debounce_open: 2ms
-    default_quick_debounce_close: 2ms
-    default_normal_debounce_open: 4ms
-    default_normal_debounce_close: 4ms
 
   exp:
     debug: false      # change to true to see full EXP serial communication in the log. Search for `[EXP]`
@@ -41,17 +31,6 @@ fast:
             model: FP-PWR-0007
 
 switches:
-  ## Flipper Cabinet Buttons
-  # s_left_flipper:
-  #   number: cab-99934534535434544
-  #   tags: left_flipper
-  # s_right_flipper:
-  #   number: cab-99934535345345345
-  #   tags: right_flipper
-
-  s_start:
-    number: cab-999345345435345345
-    tags: start
 
   ## Flipper EOS Switches
   s_left_flipper_eos: # End of Stroke
@@ -62,13 +41,11 @@ switches:
     # Bottom Third Switches. Left to Right.
   s_outlane_left:
     number: bottom3208-19
-    tags: left_outlane, playfield_active
   s_inlane_left_outer:
     number: bottom3208-18
     tags: playfield_active
   s_inlane_left_inner:
     number: bottom3208-17
-    tags: playfield_active
   s_inlane_right_inner:
     number: bottom3208-27
     tags: playfield_active
@@ -77,7 +54,6 @@ switches:
     tags: playfield_active
   s_outlane_right:
     number: bottom3208-29
-    tags: playfield_active
   
   s_sling_left:
     number: bottom3208-16 ## To check
@@ -85,9 +61,7 @@ switches:
     number: bottom3208-26
 
   #Trough Switches (x8)
-  # s_trough1: # Opto Switch (Not yet installed)
-  #   number: bottom3208-999-s_trough1
-  #   type: NC
+
   s_trough2:
     number: bottom3208-0
   s_trough3:
@@ -102,14 +76,7 @@ switches:
     number: bottom3208-5
   s_trough8:
     number: bottom3208-6
-  # s_trough_jam:
-  #   number: bottom3208-999-s_trough_jam # Not yet installed.
-  #   type: NC
 
-  # plunger lane
-  # s_plunger:
-  #   number: bottom3208-999-s_plunger # Not yet installed.
-  
   # EMP Pop Bumper Area Switches
   s_emp_pop:
     number: bottom3208-14
@@ -161,36 +128,11 @@ coils:
   c_flipper_right_main:
     number: bottom3208-5
     default_pulse_ms: 10
-  c_sling_right:
-    number: bottom3208-6
-    default_pulse_ms: 20
-    platform_settings:
-      recycle_ms: 40
-  c_sling_left:
-    number: bottom3208-7
-    default_pulse_ms: 20
-    platform_settings:
-      recycle_ms: 40
-  
-  # Middle Playfield Coils (in EMP)
-  # c_emp_pop:
-  #   number: top1616-99945546455665 # Not yet installed.
-  #   default_pulse_ms: 20
-  #   platform_settings:
-  #     recycle_ms: 40
-
-autofire_coils:
-  left_slingshot:
-    coil: c_sling_left
-    switch: s_sling_left
-  right_slingshot:
-    coil: c_sling_right
-    switch: s_sling_right
 
 playfields:
   playfield:
     tags: default
-    default_source_device: bd_plunger
+    default_source_device: None
 
 virtual_platform_start_active_switches: s_trough2, s_trough3, s_trough4, s_trough5, s_trough6, s_trough7
 
@@ -202,14 +144,14 @@ flippers:
     activation_switch: s_outlane_left
     eos_switch: s_left_flipper_eos
     use_eos: true
-    # enable_events: machine_reset_phase_3 # Allows the flippers to work before a ball is started
+    enable_events: machine_reset_phase_3 # Allows the flippers to work before a ball is started
   right_flipper:
     main_coil: c_flipper_right_main
     hold_coil: c_flipper_right_hold
     activation_switch: s_outlane_right
     eos_switch: s_right_flipper_eos
     use_eos: true
-    # enable_events: machine_reset_phase_3 # Allows the flippers to work before a ball is started
+    enable_events: machine_reset_phase_3 # Allows the flippers to work before a ball is started
 
 ball_devices:
   bd_trough:
