@@ -1,0 +1,4 @@
+#config_version=6
+
+slide_player:
+        mode_plunge_ready_started: plunge_ready

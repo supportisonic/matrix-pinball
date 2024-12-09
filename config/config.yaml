@@ -16,10 +16,10 @@ fast:
             cab:
                 model: FP-CAB-0001
                 order: 1
-            top1616:
+            top16:
                 model: FP-I/O-1616
                 order: 2
-            bottom3208:
+            bottom32:
                 model: FP-I/O-3208
                 order: 3
     port: auto
@@ -55,126 +55,126 @@ switches:
 
   ## Flipper EOS Switches
   s_left_flipper_eos: # End of Stroke
-    number: bottom3208-25
+    number: bottom32-25
   s_right_flipper_eos: # End of Stroke
-    number: bottom3208-24
+    number: bottom32-24
 
     # Bottom Third Switches. Left to Right.
   s_outlane_left:
-    number: bottom3208-19
+    number: bottom32-19
     tags: left_outlane, playfield_active
   s_inlane_left_outer:
-    number: bottom3208-18
+    number: bottom32-18
     tags: playfield_active
   s_inlane_left_inner:
-    number: bottom3208-17
+    number: bottom32-17
     tags: playfield_active
   s_inlane_right_inner:
-    number: bottom3208-27
+    number: bottom32-27
     tags: playfield_active
   s_inlane_right_outer:
-    number: bottom3208-28
+    number: bottom32-28
     tags: playfield_active
   s_outlane_right:
-    number: bottom3208-29
+    number: bottom32-29
     tags: playfield_active
   
   s_sling_left:
-    number: bottom3208-16 ## To check
+    number: bottom32-16 ## To check
   s_sling_right:
-    number: bottom3208-26
+    number: bottom32-26
 
   #Trough Switches (x8)
   s_trough1: # Opto Switch (Not yet installed)
-    number: bottom3208-999-s_trough1
+    number: bottom32-999-s_trough1
     type: NC
   s_trough2:
-    number: bottom3208-0
+    number: bottom32-0
   s_trough3:
-    number: bottom3208-1
+    number: bottom32-1
   s_trough4:
-    number: bottom3208-3
+    number: bottom32-3
   s_trough5:
-    number: bottom3208-2
+    number: bottom32-2
   s_trough6:
-    number: bottom3208-4
+    number: bottom32-4
   s_trough7:
-    number: bottom3208-5
+    number: bottom32-5
   s_trough8:
-    number: bottom3208-6
+    number: bottom32-6
   s_trough_jam:
-    number: bottom3208-999-s_trough_jam # Not yet installed.
+    number: bottom32-999-s_trough_jam # Not yet installed.
     type: NC
 
   # plunger lane
   s_plunger:
-    number: bottom3208-999-s_plunger # Not yet installed.
+    number: bottom32-999-s_plunger # Not yet installed.
   
   # EMP Pop Bumper Area Switches
   s_emp_pop:
-    number: bottom3208-14
+    number: bottom32-14
     debounce: quick
   s_emp_trigger:
-    number: bottom3208-13
+    number: bottom32-13
     tags: playfield_active
   s_emp_target_1:
-    number: bottom3208-9
+    number: bottom32-9
     tags: playfield_active
   s_emp_target_2:
-    number: bottom3208-10
+    number: bottom32-10
     tags: playfield_active
   s_emp_target_3:
-    number: bottom3208-11
+    number: bottom32-11
     tags: playfield_active
   s_emp_target_4:
-    number: bottom3208-12
+    number: bottom32-12
     tags: playfield_active
   s_kickback_target:
-    number: bottom3208-8
+    number: bottom32-8
     tags: playfield_active
 
   # Ammo Target
   s_ammo_target:
-    number: bottom3208-20
+    number: bottom32-20
     tags: playfield_active
   s_ammo_rollover:
-    number: bottom3208-21
+    number: bottom32-21
     tags: playfield_active
 
 
 coils:
   # Bottom Third Coils.
   c_auto_plunge:
-    number: bottom3208-0
+    number: bottom32-0
   c_trough_eject:
-    number: bottom3208-1
+    number: bottom32-1
     default_pulse_ms: 20
   c_flipper_left_hold:
-    number: bottom3208-2
+    number: bottom32-2
     allow_enable: true # Allows the flipper coil power to be held (failsafe)
   c_flipper_left_main:
-    number: bottom3208-3
+    number: bottom32-3
     default_pulse_ms: 10
   c_flipper_right_hold:
-    number: bottom3208-4
+    number: bottom32-4
     allow_enable: true # Allows the flipper coil power to be held (failsafe)
   c_flipper_right_main:
-    number: bottom3208-5
+    number: bottom32-5
     default_pulse_ms: 10
   c_sling_right:
-    number: bottom3208-6
+    number: bottom32-6
     default_pulse_ms: 20
     platform_settings:
       recycle_ms: 40
   c_sling_left:
-    number: bottom3208-7
+    number: bottom32-7
     default_pulse_ms: 20
     platform_settings:
       recycle_ms: 40
   
   # Middle Playfield Coils (in EMP)
   # c_emp_pop:
-  #   number: top1616-99945546455665 # Not yet installed.
+  #   number: top16-99945546455665 # Not yet installed.
   #   default_pulse_ms: 20
   #   platform_settings:
   #     recycle_ms: 40
