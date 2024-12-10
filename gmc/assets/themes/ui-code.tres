@@ -1,0 +1,9 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://ccb1am66a2yg0"]
+
+[ext_resource type="FontFile" uid="uid://x50uvbht14xy" path="res://assets/fonts/JackInput.ttf" id="1_n7xmm"]
+
+[resource]
+Label/colors/font_color = Color(0.662745, 1, 0.635294, 0.694118)
+Label/colors/font_shadow_color = Color(0, 1, 0, 0.121569)
+Label/font_sizes/font_size = 25
+Label/fonts/font = ExtResource("1_n7xmm")

@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://dxmhitrmhqv4s"]
+
+[ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_slide.gd" id="1_syi61"]
+[ext_resource type="Texture2D" uid="uid://6js05uykyxm8" path="res://slides/attract/assets/matrix-wallpaper-placeholder.png" id="2_sv4i3"]
+[ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_variable.gd" id="3_b3l8b"]
+
+[node name="Base" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_syi61")
+
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(966, 642)
+scale = Vector2(2.656, 2.656)
+texture = ExtResource("2_sv4i3")
+
+[node name="score" type="Label" parent="."]
+layout_mode = 0
+offset_top = 956.0
+offset_right = 1925.0
+offset_bottom = 1148.0
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 150
+text = "1,000,000"
+horizontal_alignment = 1
+script = ExtResource("3_b3l8b")
+variable_name = "score"
+comma_separate = true
+min_digits = 2

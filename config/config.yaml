@@ -40,6 +40,10 @@ fast:
           - port: 1
             model: FP-PWR-0007
 
+modes:
+  - base
+
+
 switches:
   ## Flipper Cabinet Buttons
   s_left_flipper:
@@ -231,10 +235,9 @@ displays:
     height: 600
 
 slide_player:
+  mode_base_started: base
   init_done: welcome
   mode_attract_started: attract
-  
-
 
 keyboard:
   s:
