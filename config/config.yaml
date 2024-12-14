@@ -10,7 +10,6 @@ mpf:
 fast:
   net:
     debug: false      # change to true to see full NET serial communication in the log. Search for `[NET]`
-    # port: /dev/cu.usbmodem14601
     controller: neuron
     io_loop: 
       top1616:
@@ -20,15 +19,6 @@ fast:
           model: FP-I/O-3208
           order: 2
 
-  exp:
-    debug: false      # change to true to see full EXP serial communication in the log. Search for `[EXP]`
-    # port: /dev/cu.usbmodem14603
-    boards:
-      neuron:
-        model: FP-EXP-2000
-        breakouts:
-          - port: 1
-            model: FP-PWR-0007
 
 switches:
 
@@ -41,71 +31,9 @@ switches:
     # Bottom Third Switches. Left to Right.
   s_outlane_left:
     number: bottom3208-19
-  s_inlane_left_outer:
-    number: bottom3208-18
-
-  s_inlane_left_inner:
-    number: bottom3208-17
-  s_inlane_right_inner:
-    number: bottom3208-27
-
-  s_inlane_right_outer:
-    number: bottom3208-28
 
   s_outlane_right:
     number: bottom3208-29
-  
-  s_sling_left:
-    number: bottom3208-16 ## To check
-  s_sling_right:
-    number: bottom3208-26
-
-  #Trough Switches (x8)
-
-  s_trough2:
-    number: bottom3208-0
-  s_trough3:
-    number: bottom3208-1
-  s_trough4:
-    number: bottom3208-3
-  s_trough5:
-    number: bottom3208-2
-  s_trough6:
-    number: bottom3208-4
-  s_trough7:
-    number: bottom3208-5
-  s_trough8:
-    number: bottom3208-6
-
-  # EMP Pop Bumper Area Switches
-  s_emp_pop:
-    number: bottom3208-14
-    debounce: quick
-  s_emp_trigger:
-    number: bottom3208-13
-
-  s_emp_target_1:
-    number: bottom3208-9
-  s_emp_target_2:
-    number: bottom3208-10
-
-  s_emp_target_3:
-    number: bottom3208-11
-
-  s_emp_target_4:
-    number: bottom3208-12
-
-  s_kickback_target:
-    number: bottom3208-8
-
-
-  # Ammo Target
-  s_ammo_target:
-    number: bottom3208-20
-
-  s_ammo_rollover:
-    number: bottom3208-21
-
 
 
 coils:
@@ -132,38 +60,14 @@ playfields:
     tags: default
     default_source_device: None
 
-# virtual_platform_start_active_switches: s_trough2, s_trough3, s_trough4, s_trough5, s_trough6, s_trough7
-
-
 flippers:
   left_flipper:
     main_coil: c_flipper_left_main
     hold_coil: c_flipper_left_hold
     activation_switch: s_outlane_left
-    # eos_switch: s_left_flipper_eos
-    # use_eos: true
-    enable_events: machine_reset_phase_3 # Allows the flippers to work before a ball is started
+    enable_events: machine_reset_phase_3, mode_attract_started # Allows the flippers to work before a ball is started
   right_flipper:
     main_coil: c_flipper_right_main
     hold_coil: c_flipper_right_hold
     activation_switch: s_outlane_right
-    # eos_switch: s_right_flipper_eos
-    # use_eos: true
-    enable_events: machine_reset_phase_3 # Allows the flippers to work before a ball is started
-
-# ball_devices:
-#   bd_trough:
-#     ball_switches: s_trough2, s_trough3, s_trough4, s_trough5, s_trough6, s_trough7, s_trough8
-#     eject_coil: c_trough_eject
-#     tags: trough, home, drain
-#     eject_coil_jam_pulse: 15ms
-#     eject_targets: bd_plunger
-#     eject_timeouts: 3s
-#   bd_plunger:
-#     ball_switches: s_inlane_left_inner
-#     mechanical_eject: true
-#     eject_timeouts: 5s
-
-# slide_player:
-#   init_done: welcome
-#   mode_attract_started: attract
+    enable_events: machine_reset_phase_3, mode_attract_started # Allows the flippers to work before a ball is started
