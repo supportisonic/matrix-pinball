@@ -120,7 +120,6 @@ coils:
     allow_enable: true # Allows the flipper coil power to be held (failsafe)
   c_flipper_left_main:
     number: bottom3208-3
-    default_pulse_ms: 20
   c_flipper_right_hold:
     number: bottom3208-4
     allow_enable: true # Allows the flipper coil power to be held (failsafe)
@@ -133,7 +132,7 @@ playfields:
     tags: default
     default_source_device: None
 
-virtual_platform_start_active_switches: s_trough2, s_trough3, s_trough4, s_trough5, s_trough6, s_trough7
+# virtual_platform_start_active_switches: s_trough2, s_trough3, s_trough4, s_trough5, s_trough6, s_trough7
 
 
 flippers:
@@ -141,15 +140,15 @@ flippers:
     main_coil: c_flipper_left_main
     hold_coil: c_flipper_left_hold
     activation_switch: s_outlane_left
-    eos_switch: s_left_flipper_eos
-    use_eos: true
+    # eos_switch: s_left_flipper_eos
+    # use_eos: true
     enable_events: machine_reset_phase_3 # Allows the flippers to work before a ball is started
   right_flipper:
     main_coil: c_flipper_right_main
     hold_coil: c_flipper_right_hold
     activation_switch: s_outlane_right
-    eos_switch: s_right_flipper_eos
-    use_eos: true
+    # eos_switch: s_right_flipper_eos
+    # use_eos: true
     enable_events: machine_reset_phase_3 # Allows the flippers to work before a ball is started
 
 # ball_devices:
@@ -165,6 +164,6 @@ flippers:
 #     mechanical_eject: true
 #     eject_timeouts: 5s
 
-slide_player:
-  init_done: welcome
-  mode_attract_started: attract
+# slide_player:
+#   init_done: welcome
+#   mode_attract_started: attract
