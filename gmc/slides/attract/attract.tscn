@@ -1,21 +1,25 @@
-[gd_scene load_steps=3 format=3 uid="uid://beah3ghimt2j6"]
+[gd_scene load_steps=5 format=3 uid="uid://beah3ghimt2j6"]
 
 [ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_slide.gd" id="1_cw3x3"]
 [ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_video_player.gd" id="2_5xfga"]
+[ext_resource type="VideoStream" path="res://slides/attract/assets/matrixrain.ogv" id="2_t60sw"]
+[ext_resource type="Texture2D" uid="uid://6js05uykyxm8" path="res://slides/attract/assets/matrix-wallpaper-placeholder.png" id="4_5pngr"]
 
 [node name="Attract" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_cw3x3")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="MPFVideoPlayer" type="VideoStreamPlayer" parent="."]
+clip_contents = true
 layout_mode = 0
 offset_right = 1920.0
-offset_bottom = 1280.0
-color = Color(0.0784314, 0.14902, 0.133333, 1)
-
-[node name="MPFVideoPlayer" type="VideoStreamPlayer" parent="."]
-layout_mode = 0
-offset_right = 1948.0
-offset_bottom = 1276.0
+offset_bottom = 1088.0
+stream = ExtResource("2_t60sw")
+autoplay = true
+loop = true
 script = ExtResource("2_5xfga")
+
+[node name="Matrix-wallpaper-placeholder" type="Sprite2D" parent="."]
+position = Vector2(805, 472)
+texture = ExtResource("4_5pngr")

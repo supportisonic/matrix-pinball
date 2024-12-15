@@ -1,37 +1,42 @@
 events:
-  game_ended: 0
-  game_started: 1
+  game_ended: 2
+  game_started: 16
 missing_switches:
-  s_ammo_rollover: 1
-  s_ammo_target: 1
-  s_emp_pop: 1
-  s_emp_target_1: 1
-  s_emp_target_2: 1
-  s_emp_target_3: 1
-  s_emp_target_4: 1
-  s_emp_trigger: 1
-  s_inlane_left_outer: 1
-  s_inlane_right_outer: 1
-  s_kickback_target: 1
-  s_left_flipper_eos: 1
-  s_plunger: 1
-  s_right_flipper_eos: 1
-  s_sling_left: 1
-  s_sling_right: 1
+  s_ammo_rollover: 16
+  s_ammo_target: 16
+  s_emp_pop: 16
+  s_emp_target_1: 16
+  s_emp_target_2: 16
+  s_emp_target_3: 16
+  s_emp_target_4: 16
+  s_emp_trigger: 16
+  s_inlane_left_outer: 16
+  s_inlane_right_outer: 16
+  s_kickback_target: 16
+  s_left_flipper: 3
+  s_left_flipper_eos: 16
+  s_outlane_left: 1
+  s_outlane_right: 1
+  s_right_flipper: 2
+  s_right_flipper_eos: 16
+  s_sling_left: 16
+  s_sling_right: 16
+  s_start: 2
   s_trough1: 1
-  s_trough2: 1
   s_trough3: 1
-  s_trough4: 1
-  s_trough5: 1
-  s_trough6: 1
-  s_trough7: 1
-  s_trough8: 1
-  s_trough_jam: 1
+  s_trough4: 16
+  s_trough5: 16
+  s_trough6: 16
+  s_trough7: 16
+  s_trough8: 16
+  s_trough_jam: 16
 player:
   score:
-    average: 0
-    top: []
-    total: 0
+    average: 8900
+    top:
+    - 9500
+    - 8300
+    total: 2
 switches:
   s_ammo_rollover: 0
   s_ammo_target: 0
@@ -41,24 +46,24 @@ switches:
   s_emp_target_3: 0
   s_emp_target_4: 0
   s_emp_trigger: 0
-  s_inlane_left_inner: 7
+  s_inlane_left_inner: 466
   s_inlane_left_outer: 0
-  s_inlane_right_inner: 3
+  s_inlane_right_inner: 334
   s_inlane_right_outer: 0
   s_kickback_target: 0
-  s_left_flipper: 2
+  s_left_flipper: 37
   s_left_flipper_eos: 0
-  s_outlane_left: 3
-  s_outlane_right: 3
-  s_plunger: 0
-  s_right_flipper: 2
+  s_outlane_left: 11
+  s_outlane_right: 48
+  s_plunger: 70
+  s_right_flipper: 29
   s_right_flipper_eos: 0
   s_sling_left: 0
   s_sling_right: 0
-  s_start: 5
-  s_trough1: 0
-  s_trough2: 0
-  s_trough3: 0
+  s_start: 10
+  s_trough1: 46
+  s_trough2: 10
+  s_trough3: 51
   s_trough4: 0
   s_trough5: 0
   s_trough6: 0

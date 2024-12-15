@@ -1,5 +1,15 @@
 #config_version=6
 
 mode:
-  start_events: ball_started
+  start_events: ball_starting
   priority: 100
+
+variable_player:
+  s_inlane_left_outer_active:
+    score: 100
+  s_inlane_left_inner_active:
+    score: 100
+  s_inlane_right_inner_active:
+    score: 100
+  s_inlane_right_outer_active:
+    score: 100
