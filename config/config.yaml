@@ -65,9 +65,9 @@ flippers:
     main_coil: c_flipper_left_main
     hold_coil: c_flipper_left_hold
     activation_switch: s_outlane_left
-    enable_events: machine_reset_phase_3, mode_attract_started # Allows the flippers to work before a ball is started
+    enable_events: machine_reset_phase_3 # Allows the flippers to work before a ball is started
   right_flipper:
     main_coil: c_flipper_right_main
     hold_coil: c_flipper_right_hold
     activation_switch: s_outlane_right
-    enable_events: machine_reset_phase_3, mode_attract_started # Allows the flippers to work before a ball is started
+    enable_events: machine_reset_phase_3 # Allows the flippers to work before a ball is started
